@@ -43,10 +43,29 @@ function App() {
         : [...prev, index]                   // kalau belum → tambah
     );
   };
-
+// Hitung berapa yang sudah dicentang dari total
+const completedCount = completed.length;
+const totalCount = habits.length;
   return (
     <div className="app">
       <h1>Habit Tracker</h1>
+      <h1>Habit Tracker</h1>
+
+{/* ← BARU: progress counter */}
+{totalCount > 0 && (
+  <div className="progress-bar-wrapper">
+    <div className="progress-header">
+      <span className="progress-label">Today's Progress</span>
+      <span className="progress-count">{completedCount}/{totalCount}</span>
+    </div>
+    <div className="progress-track">
+      <div
+        className="progress-fill"
+        style={{ width: `${(completedCount / totalCount) * 100}%` }}
+      />
+    </div>
+  </div>
+)}
 
       <div className="input-row">
         <input

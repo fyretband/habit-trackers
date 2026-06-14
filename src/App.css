@@ -254,3 +254,48 @@ body {
   text-decoration: line-through;
   color: #b0b0c0;
 }
+/* ================================
+   PROGRESS BAR
+   Menampilkan berapa habit yang
+   sudah selesai hari ini.
+================================ */
+.progress-bar-wrapper {
+  margin-bottom: 24px;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.progress-label {
+  font-size: 13px;
+  color: #b0b0c0;
+  font-weight: 500;
+}
+
+/* Angka "2/4" di kanan */
+.progress-count {
+  font-size: 14px;
+  font-weight: 700;
+  color: #6c63ff;
+}
+
+/* Track abu-abu di belakang */
+.progress-track {
+  width: 100%;
+  height: 6px;
+  background-color: #e8e6ff;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+/* Bar ungu yang bergerak */
+.progress-fill {
+  height: 100%;
+  background-color: #6c63ff;
+  border-radius: 99px;
+  transition: width 0.3s ease;  /* animasi halus saat berubah */
+}
