@@ -1,89 +1,134 @@
-/* ── Reset & Base ── */
+/* ================================
+   RESET
+   Removes default browser spacing
+   so everything looks consistent.
+================================ */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* ================================
+   PAGE BACKGROUND
+   Centers the card on the page
+   and sets the background color.
+================================ */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background-color: #f0f2f5;
-  color: #1a1a2e;
   min-height: 100vh;
+  background-color: #f0f2f5;
   display: flex;
   justify-content: center;
-  padding: 40px 16px;
+  align-items: flex-start;
+  padding: 48px 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #1a1a2e;
 }
 
-/* ── App Container ── */
+/* ================================
+   CARD
+   The white box that holds
+   everything. Centered, with a
+   soft shadow to lift it off
+   the background.
+================================ */
 .app {
   background-color: #ffffff;
-  border-radius: 16px;
-  padding: 32px;
+  border-radius: 20px;
+  padding: 36px 32px;
   width: 100%;
-  max-width: 480px;
-  height: fit-content;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  max-width: 500px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
-/* ── Title ── */
+/* ================================
+   TITLE
+   The main heading at the top.
+================================ */
 .app h1 {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
   color: #1a1a2e;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   letter-spacing: -0.5px;
 }
 
-/* ── Input Row ── */
+/* ================================
+   INPUT ROW
+   Puts the text input and Add
+   button side by side using
+   flexbox.
+================================ */
 .input-row {
   display: flex;
-  gap: 8px;
-  margin-bottom: 24px;
+  gap: 10px;
+  margin-bottom: 28px;
 }
 
+/* ================================
+   TEXT INPUT
+   The field where you type a
+   new habit. Grows to fill
+   available space (flex: 1).
+================================ */
 .input-row input {
   flex: 1;
-  padding: 10px 14px;
-  border: 1.5px solid #e0e0e0;
-  border-radius: 10px;
+  padding: 12px 16px;
   font-size: 15px;
   color: #1a1a2e;
+  background-color: #f7f7ff;
+  border: 1.5px solid #e0e0f0;
+  border-radius: 12px;
   outline: none;
   transition: border-color 0.2s;
 }
 
+/* Highlight the border purple
+   when the user clicks on it */
 .input-row input:focus {
   border-color: #6c63ff;
+  background-color: #ffffff;
 }
 
+/* Style the placeholder text */
 .input-row input::placeholder {
-  color: #aaa;
+  color: #b0b0c0;
 }
 
-/* ── Add Button ── */
+/* ================================
+   ADD BUTTON
+   The purple button to add
+   a new habit.
+================================ */
 .btn-add {
-  padding: 10px 18px;
-  background-color: #6c63ff;
-  color: #ffffff;
-  border: none;
-  border-radius: 10px;
+  padding: 12px 20px;
   font-size: 15px;
   font-weight: 600;
+  color: #ffffff;
+  background-color: #6c63ff;
+  border: none;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background-color 0.2s, transform 0.1s;
   white-space: nowrap;
+  transition: background-color 0.2s, transform 0.1s;
 }
 
+/* Slightly darker on hover */
 .btn-add:hover {
   background-color: #574fd6;
 }
 
+/* Small "press" effect on click */
 .btn-add:active {
   transform: scale(0.97);
 }
 
-/* ── Habit List ── */
+/* ================================
+   HABIT LIST
+   The <ul> that holds all habits.
+   Removes default bullet points
+   and adds space between items.
+================================ */
 .habit-list {
   list-style: none;
   display: flex;
@@ -91,50 +136,121 @@ body {
   gap: 10px;
 }
 
-/* ── Habit Item ── */
+/* ================================
+   HABIT ITEM
+   Each individual habit row.
+   Uses flexbox to push the
+   Delete button to the right.
+================================ */
 .habit-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 16px;
+  padding: 14px 16px;
   background-color: #f7f7ff;
   border: 1.5px solid #e8e6ff;
-  border-radius: 12px;
+  border-radius: 14px;
   transition: background-color 0.2s;
 }
 
+/* Subtle highlight on hover */
 .habit-item:hover {
   background-color: #eeeeff;
 }
 
+/* The habit text */
 .habit-item span {
   font-size: 15px;
   color: #1a1a2e;
 }
 
-/* ── Delete Button ── */
+/* ================================
+   DELETE BUTTON
+   Outlined red button. Fills
+   red on hover to signal a
+   destructive action.
+================================ */
 .btn-delete {
-  padding: 5px 12px;
-  background-color: transparent;
-  color: #e05260;
-  border: 1.5px solid #e05260;
-  border-radius: 8px;
+  padding: 6px 14px;
   font-size: 13px;
   font-weight: 500;
+  color: #e05260;
+  background-color: transparent;
+  border: 1.5px solid #e05260;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.2s, color 0.2s;
   flex-shrink: 0;
+  transition: background-color 0.2s, color 0.2s;
 }
 
+/* Fill red on hover */
 .btn-delete:hover {
   background-color: #e05260;
   color: #ffffff;
 }
 
-/* ── Empty State ── */
+/* ================================
+   EMPTY STATE
+   Shown when there are no habits.
+   Usage in JSX:
+   {habits.length === 0 && (
+     <p className="empty-state">
+       No habits yet. Add one!
+     </p>
+   )}
+================================ */
 .empty-state {
   text-align: center;
-  color: #aaa;
   font-size: 14px;
-  padding: 24px 0;
+  color: #b0b0c0;
+  padding: 32px 0;
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+   On small screens (phones),
+   shrink the padding and font
+   sizes slightly so it still
+   looks great.
+================================ */
+@media (max-width: 480px) {
+  .app {
+    padding: 24px 20px;
+  }
+
+  .app h1 {
+    font-size: 22px;
+  }
+
+  .btn-add {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+}
+/* ================================
+   CHECKBOX
+   Styling untuk checkbox habit.
+================================ */
+.habit-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #6c63ff;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-right: 4px;
+}
+
+/* ================================
+   COMPLETED HABIT
+   Kalau habit sudah dicentang,
+   teks jadi abu-abu dan dicoret.
+================================ */
+.habit-item.completed {
+  background-color: #f0f0f0;
+  border-color: #ddd;
+}
+
+.habit-item.completed span {
+  text-decoration: line-through;
+  color: #b0b0c0;
 }
