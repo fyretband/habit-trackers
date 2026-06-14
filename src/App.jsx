@@ -49,7 +49,7 @@ const totalCount = habits.length;
   return (
     <div className="app">
       <h1>Habit Tracker</h1>
-      <h1>Habit Tracker</h1>
+      
 
 {/* ← BARU: progress counter */}
 {totalCount > 0 && (
